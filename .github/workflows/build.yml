@@ -12,10 +12,15 @@ jobs:
     steps:
     - name: Checkout Código Fuente
       uses: actions/checkout@v4
+      with:
+        lfs: true
 
-    - name: Clonar SDK Oficial de iOS 6.1 (armv7 32-bit)
+    - name: Clonar SDK Oficial de iOS 6.1 con Git LFS
       run: |
-        git clone --depth 1 https://github.com/theos/sdks.git theos-sdks
+        git clone https://github.com/theos/sdks.git theos-sdks
+        cd theos-sdks
+        git lfs pull --include="iPhoneOS6.1.sdk" || true
+        cd ..
 
     - name: Compilar App Nativa para Arquitectura armv7 (iPhone 4)
       run: |
