@@ -1,0 +1,42 @@
+name: Compilar IPA Nativo iOS 6 (iPhone 4)
+
+on:
+  push:
+    branches: [ main, master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-13
+    
+    steps:
+    - name: Checkout Código Fuente
+      uses: actions/checkout@v3
+
+    - name: Configurar SDK e Xcode
+      run: |
+        sudo xcode-select -s /Applications/Xcode_14.3.1.app/Contents/Developer
+        xcodebuild -version
+
+    - name: Compilar Proyecto Nativo (armv7 iOS Target)
+      run: |
+        xcodebuild -project iPodClassiciOS6.xcodeproj \
+                   -scheme iPodClassiciOS6 \
+                   -sdk iphoneos \
+                   -configuration Release \
+                   -derivedDataPath build \
+                   CODE_SIGNING_ALLOWED=NO \
+                   CODE_SIGN_IDENTITY="" \
+                   CODE_SIGNING_REQUIRED=NO
+
+    - name: Empaquetar como Archivo .IPA
+      run: |
+        mkdir -p Payload
+        cp -R build/Build/Products/Release-iphoneos/iPodClassiciOS6.app Payload/
+        zip -r iPodClassiciOS6.ipa Payload/
+
+    - name: Subir Artifact IPA para Descargar
+      uses: actions/upload-artifact@v3
+      with:
+        name: iPodClassiciOS6-iPhone4-IPA
+        path: iPodClassiciOS6.ipa
