@@ -13,10 +13,9 @@ jobs:
     - name: Checkout Código Fuente
       uses: actions/checkout@v4
 
-    - name: Descargar SDK Oficial de iOS 6.1 (armv7 32-bit)
+    - name: Clonar SDK Oficial de iOS 6.1 (armv7 32-bit)
       run: |
-        curl -L -o iPhoneOS6.1.sdk.tar.xz https://github.com/theos/sdks/raw/master/iPhoneOS6.1.sdk.tar.xz
-        tar -xf iPhoneOS6.1.sdk.tar.xz
+        git clone --depth 1 https://github.com/theos/sdks.git theos-sdks
 
     - name: Compilar App Nativa para Arquitectura armv7 (iPhone 4)
       run: |
@@ -24,7 +23,7 @@ jobs:
         
         clang -target armv7-apple-ios6.0 \
           -arch armv7 \
-          -isysroot iPhoneOS6.1.sdk \
+          -isysroot theos-sdks/iPhoneOS6.1.sdk \
           -miphoneos-version-min=6.0 \
           -fobjc-arc \
           -framework UIKit \
