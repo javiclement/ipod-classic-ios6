@@ -21,8 +21,11 @@ jobs:
                    -configuration Release \
                    -derivedDataPath build \
                    CODE_SIGNING_ALLOWED=NO \
+                   CODE_SIGNING_REQUIRED=NO \
                    CODE_SIGN_IDENTITY="" \
-                   CODE_SIGNING_REQUIRED=NO
+                   CODE_SIGN_STYLE=Manual \
+                   DEVELOPMENT_TEAM="" \
+                   AD_HOC_CODE_SIGNING_ALLOWED=YES
 
     - name: Empaquetar como Archivo .IPA
       run: |
