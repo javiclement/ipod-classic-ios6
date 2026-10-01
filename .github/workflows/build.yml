@@ -23,7 +23,7 @@ jobs:
                    CODE_SIGNING_ALLOWED=NO \
                    CODE_SIGN_IDENTITY="" \
                    CODE_SIGNING_REQUIRED=NO \
-                   ONLY_ACTIVE_ARCH=NO
+                   IPHONEOS_DEPLOYMENT_TARGET=12.0
 
     - name: Empaquetar como Archivo .IPA
       run: |
