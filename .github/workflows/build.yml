@@ -13,22 +13,35 @@ jobs:
     - name: Checkout Código Fuente
       uses: actions/checkout@v4
 
-    - name: Compilar Proyecto Nativo (iOS Target)
+    - name: Compilar App Nativa con Clang
       run: |
-        xcodebuild -project iPodClassiciOS6.xcodeproj \
-                   -scheme iPodClassiciOS6 \
-                   -destination 'generic/platform=iOS' \
-                   -configuration Release \
-                   -derivedDataPath build \
-                   CODE_SIGNING_ALLOWED=NO \
-                   CODE_SIGN_IDENTITY="" \
-                   CODE_SIGNING_REQUIRED=NO \
-                   IPHONEOS_DEPLOYMENT_TARGET=12.0
+        mkdir -p iPodClassiciOS6.app
+        SDK_PATH=$(xcrun --sdk iphoneos --show-sdk-path)
+        
+        xcrun -sdk iphoneos clang -O2 \
+          -isysroot "$SDK_PATH" \
+          -fobjc-arc \
+          -framework UIKit \
+          -framework Foundation \
+          -framework CoreGraphics \
+          -framework QuartzCore \
+          -framework AVFoundation \
+          -framework MediaPlayer \
+          -framework AudioToolbox \
+          iPodClassiciOS6/main.m \
+          iPodClassiciOS6/AppDelegate.m \
+          iPodClassiciOS6/ViewController.m \
+          iPodClassiciOS6/ClickWheelView.m \
+          iPodClassiciOS6/iPodDisplayView.m \
+          iPodClassiciOS6/MusicLibraryManager.m \
+          -o iPodClassiciOS6.app/iPodClassiciOS6
+
+        cp iPodClassiciOS6/Info.plist iPodClassiciOS6.app/Info.plist
 
     - name: Empaquetar como Archivo .IPA
       run: |
         mkdir -p Payload
-        cp -R build/Build/Products/Release-iphoneos/iPodClassiciOS6.app Payload/
+        cp -R iPodClassiciOS6.app Payload/
         zip -r iPodClassiciOS6.ipa Payload/
 
     - name: Subir Artifact IPA para Descargar
