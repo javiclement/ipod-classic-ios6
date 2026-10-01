@@ -11,7 +11,7 @@ jobs:
     
     steps:
     - name: Checkout Código Fuente
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Compilar Proyecto Nativo (iOS Target)
       run: |
@@ -32,7 +32,7 @@ jobs:
         zip -r iPodClassiciOS6.ipa Payload/
 
     - name: Subir Artifact IPA para Descargar
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: iPodClassiciOS6-iPhone4-IPA
         path: iPodClassiciOS6.ipa
