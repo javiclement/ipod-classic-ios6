@@ -10,16 +10,11 @@
 		1000000129B1234100000001 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1000000129B1234200000001 /* main.m */; };
 		1000000229B1234100000001 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1000000229B1234200000001 /* AppDelegate.m */; };
 		1000000329B1234100000001 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1000000329B1234200000001 /* ViewController.m */; };
-		1000000429B1234100000001 /* ClickWheelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1000000429B1234200000001 /* ClickWheelView.m */; };
-		1000000529B1234100000001 /* iPodDisplayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1000000529B1234200000001 /* iPodDisplayView.m */; };
-		1000000629B1234100000001 /* MusicLibraryManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1000000629B1234200000001 /* MusicLibraryManager.m */; };
 		1000000729B1234100000001 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000000729B1234200000001 /* UIKit.framework */; };
 		1000000829B1234100000001 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000000829B1234200000001 /* Foundation.framework */; };
-		1000000929B1234100000001 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000000929B1234200000001 /* CoreGraphics.framework */; };
-		1000000A29B1234100000001 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000000A29B1234200000001 /* QuartzCore.framework */; };
-		1000000B29B1234100000001 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000000B29B1234200000001 /* AVFoundation.framework */; };
-		1000000C29B1234100000001 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000000C29B1234200000001 /* MediaPlayer.framework */; };
-		1000000D29B1234100000001 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1000000D29B1234200000001 /* AudioToolbox.framework */; };
+		100000E029B1234100000001 /* index.html in Resources */ = {isa = PBXBuildFile; fileRef = 100000E029B1234200000001 /* index.html */; };
+		100000E129B1234100000001 /* style.css in Resources */ = {isa = PBXBuildFile; fileRef = 100000E129B1234200000001 /* style.css */; };
+		100000E229B1234100000001 /* app.js in Resources */ = {isa = PBXBuildFile; fileRef = 100000E229B1234200000001 /* app.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,20 +24,12 @@
 		1000000229B1234300000001 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1000000329B1234200000001 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		1000000329B1234300000001 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		1000000429B1234200000001 /* ClickWheelView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClickWheelView.m; sourceTree = "<group>"; };
-		1000000429B1234300000001 /* ClickWheelView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClickWheelView.h; sourceTree = "<group>"; };
-		1000000529B1234200000001 /* iPodDisplayView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iPodDisplayView.m; sourceTree = "<group>"; };
-		1000000529B1234300000001 /* iPodDisplayView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = iPodDisplayView.h; sourceTree = "<group>"; };
-		1000000629B1234200000001 /* MusicLibraryManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicLibraryManager.m; sourceTree = "<group>"; };
-		1000000629B1234300000001 /* MusicLibraryManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MusicLibraryManager.h; sourceTree = "<group>"; };
 		1000000F29B1234200000001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		100000E029B1234200000001 /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; name = index.html; path = ../web_version/index.html; sourceTree = "<group>"; };
+		100000E129B1234200000001 /* style.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; name = style.css; path = ../web_version/style.css; sourceTree = "<group>"; };
+		100000E229B1234200000001 /* app.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; name = app.js; path = ../web_version/app.js; sourceTree = "<group>"; };
 		1000000729B1234200000001 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		1000000829B1234200000001 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		1000000929B1234200000001 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		1000000A29B1234200000001 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		1000000B29B1234200000001 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		1000000C29B1234200000001 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		1000000D29B1234200000001 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,15 +39,23 @@
 			files = (
 				1000000729B1234100000001 /* UIKit.framework in Frameworks */,
 				1000000829B1234100000001 /* Foundation.framework in Frameworks */,
-				1000000929B1234100000001 /* CoreGraphics.framework in Frameworks */,
-				1000000A29B1234100000001 /* QuartzCore.framework in Frameworks */,
-				1000000B29B1234100000001 /* AVFoundation.framework in Frameworks */,
-				1000000C29B1234100000001 /* MediaPlayer.framework in Frameworks */,
-				1000000D29B1234100000001 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXResourcesBuildPhase section */
+		100000D029B1234100000001 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				100000E029B1234100000001 /* index.html in Resources */,
+				100000E129B1234100000001 /* style.css in Resources */,
+				100000E229B1234100000001 /* app.js in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXGroup section */
 		1000003029B1234100000001 = {
@@ -80,13 +75,10 @@
 				1000000229B1234200000001 /* AppDelegate.m */,
 				1000000329B1234300000001 /* ViewController.h */,
 				1000000329B1234200000001 /* ViewController.m */,
-				1000000429B1234300000001 /* ClickWheelView.h */,
-				1000000429B1234200000001 /* ClickWheelView.m */,
-				1000000529B1234300000001 /* iPodDisplayView.h */,
-				1000000529B1234200000001 /* iPodDisplayView.m */,
-				1000000629B1234300000001 /* MusicLibraryManager.h */,
-				1000000629B1234200000001 /* MusicLibraryManager.m */,
 				1000000F29B1234200000001 /* Info.plist */,
+				100000E029B1234200000001 /* index.html */,
+				100000E129B1234200000001 /* style.css */,
+				100000E229B1234200000001 /* app.js */,
 			);
 			path = iPodClassiciOS6;
 			sourceTree = "<group>";
@@ -96,11 +88,6 @@
 			children = (
 				1000000729B1234200000001 /* UIKit.framework */,
 				1000000829B1234200000001 /* Foundation.framework */,
-				1000000929B1234200000001 /* CoreGraphics.framework */,
-				1000000A29B1234200000001 /* QuartzCore.framework */,
-				1000000B29B1234200000001 /* AVFoundation.framework */,
-				1000000C29B1234200000001 /* MediaPlayer.framework */,
-				1000000D29B1234200000001 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -122,6 +109,7 @@
 			buildPhases = (
 				1000006029B1234100000001 /* Sources */,
 				1000002029B1234100000001 /* Frameworks */,
+				100000D029B1234100000001 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -171,9 +159,6 @@
 				1000000129B1234100000001 /* main.m in Sources */,
 				1000000229B1234100000001 /* AppDelegate.m in Sources */,
 				1000000329B1234100000001 /* ViewController.m in Sources */,
-				1000000429B1234100000001 /* ClickWheelView.m in Sources */,
-				1000000529B1234100000001 /* iPodDisplayView.m in Sources */,
-				1000000629B1234100000001 /* MusicLibraryManager.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,7 +174,6 @@
 				CODE_SIGNING_REQUIRED = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				INFOPLIST_FILE = iPodClassiciOS6/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.retro.ipodclassicios6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
@@ -205,7 +189,6 @@
 				CODE_SIGNING_ALLOWED = NO;
 				CODE_SIGNING_REQUIRED = NO;
 				INFOPLIST_FILE = iPodClassiciOS6/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.retro.ipodclassicios6;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;

@@ -12,46 +12,22 @@ jobs:
     steps:
     - name: Checkout Código Fuente
       uses: actions/checkout@v4
-      with:
-        lfs: true
 
-    - name: Clonar SDK Oficial de iOS 6.1 con Git LFS
+    - name: Compilar App Nativa con Xcode
       run: |
-        git clone https://github.com/theos/sdks.git theos-sdks
-        cd theos-sdks
-        git lfs pull --include="iPhoneOS6.1.sdk" || true
-        cd ..
-
-    - name: Compilar App Nativa para Arquitectura armv7 (iPhone 4)
-      run: |
-        mkdir -p iPodClassiciOS6.app
-        
-        clang -target armv7-apple-ios6.0 \
-          -arch armv7 \
-          -isysroot theos-sdks/iPhoneOS6.1.sdk \
-          -miphoneos-version-min=6.0 \
-          -fobjc-arc \
-          -framework UIKit \
-          -framework Foundation \
-          -framework CoreGraphics \
-          -framework QuartzCore \
-          -framework AVFoundation \
-          -framework MediaPlayer \
-          -framework AudioToolbox \
-          iPodClassiciOS6/main.m \
-          iPodClassiciOS6/AppDelegate.m \
-          iPodClassiciOS6/ViewController.m \
-          iPodClassiciOS6/ClickWheelView.m \
-          iPodClassiciOS6/iPodDisplayView.m \
-          iPodClassiciOS6/MusicLibraryManager.m \
-          -o iPodClassiciOS6.app/iPodClassiciOS6
-
-        cp iPodClassiciOS6/Info.plist iPodClassiciOS6.app/Info.plist
+        xcodebuild -project iPodClassiciOS6.xcodeproj \
+                   -scheme iPodClassiciOS6 \
+                   -destination 'generic/platform=iOS' \
+                   -configuration Release \
+                   -derivedDataPath build \
+                   CODE_SIGNING_ALLOWED=NO \
+                   CODE_SIGN_IDENTITY="" \
+                   CODE_SIGNING_REQUIRED=NO
 
     - name: Empaquetar como Archivo .IPA
       run: |
         mkdir -p Payload
-        cp -R iPodClassiciOS6.app Payload/
+        cp -R build/Build/Products/Release-iphoneos/iPodClassiciOS6.app Payload/
         zip -r iPodClassiciOS6.ipa Payload/
 
     - name: Subir Artifact IPA para Descargar
