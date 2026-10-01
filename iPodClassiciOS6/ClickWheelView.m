@@ -6,6 +6,7 @@
 #import "ClickWheelView.h"
 #import <AudioToolbox/AudioToolbox.h>
 #import <QuartzCore/QuartzCore.h>
+#import <math.h>
 
 @interface ClickWheelView () {
     CGFloat _lastAngle;
@@ -59,8 +60,6 @@
         AudioServicesPlaySystemSound(_tickSoundID);
     }
 }
-
-#import <math.h>
 
 - (CGFloat)angleForPoint:(CGPoint)point {
     CGFloat dx = point.x - _centerPoint.x;

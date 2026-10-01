@@ -40,7 +40,7 @@
         [session setCategory:AVAudioSessionCategoryPlayback error:&error];
         [session setActive:YES error:&error];
         
-        _systemMusicPlayer = [MPMusicPlayerController iDistantMusicPlayer];
+        _systemMusicPlayer = [MPMusicPlayerController iPodMusicPlayer];
     }
     return self;
 }

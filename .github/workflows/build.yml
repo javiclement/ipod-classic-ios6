@@ -17,7 +17,7 @@ jobs:
       run: |
         xcodebuild -project iPodClassiciOS6.xcodeproj \
                    -scheme iPodClassiciOS6 \
-                   -sdk iphoneos \
+                   -destination 'generic/platform=iOS' \
                    -configuration Release \
                    -derivedDataPath build \
                    CODE_SIGNING_ALLOWED=NO \
