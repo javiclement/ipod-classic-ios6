@@ -1,0 +1,9 @@
+Package: com.retro.ipodclassic
+Name: iPod Classic
+Depends: 
+Version: 1.0
+Architecture: iphoneos-arm
+Description: Classic iPod Click Wheel music player for iOS 6
+Maintainer: Javi
+Author: Javi
+Section: Multimedia

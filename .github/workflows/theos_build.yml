@@ -1,0 +1,38 @@
+name: Compilar IPA y DEB Nativo iOS 6 (Theos Linux)
+
+on:
+  push:
+    branches: [ master, main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Código Fuente
+        uses: actions/checkout@v4
+
+      - name: Instalar Theos Suite
+        uses: beerpiss/theos-action@v1
+
+      - name: Compilar Paquete Nativo 32-bit (armv7)
+        run: |
+          make package FINALPACKAGE=1
+
+      - name: Generar Archivo IPA desde Paquete
+        run: |
+          mkdir -p Payload
+          cp -r .theos/obj/debug/iPodClassic.app Payload/ 2>/dev/null || cp -r .theos/obj/iPodClassic.app Payload/ 2>/dev/null || true
+          if [ -d "Payload/iPodClassic.app" ]; then
+            cp iPodClassiciOS6/Info.plist Payload/iPodClassic.app/Info.plist 2>/dev/null || true
+            zip -r iPodClassic.ipa Payload/
+          fi
+
+      - name: Subir Instaladores (.IPA y .DEB para 3uTools)
+        uses: actions/upload-artifact@v4
+        with:
+          name: iPodClassic-iPhone4-Instalador
+          path: |
+            packages/*.deb
+            iPodClassic.ipa
